@@ -22,7 +22,7 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        primaryKey: true,
+        // primaryKey: true,
       },
       published: {
         allowNull: false,
