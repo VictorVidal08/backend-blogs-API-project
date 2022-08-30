@@ -18,7 +18,16 @@ const create = async (name) => {
         return error;
     }
 };
+
+ const findAll = async () => {
+    try {
+        const result = await Category.findAll();
+        return result;
+    } catch (error) {
+        return error;
+    }
+ };
     
 module.exports = {
-    create,
+    create, findAll,
 };
