@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const { userValidation } = require('../middlewares/userValidation');
 
-// const token = require('../helpers/token');
+const validToken = require('../middlewares/validToken');
 
 const userController = require('../controllers/user');
 
@@ -10,6 +10,6 @@ const userRouter = Router();
 
 userRouter.post('/', userValidation, userController.create);
 
-userRouter.get('/', userController.findAll);
+userRouter.get('/', validToken, userController.findAll);
 
 module.exports = userRouter;
