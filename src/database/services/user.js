@@ -20,16 +20,25 @@ const create = async (userObject) => {
     }
 };
 
-const findAll = async (_req, res) => {
+const findAll = async () => {
     // ref: https://stackoverflow.com/questions/31679838/sequelizejs-findall-exclude-field
     try {
         const result = await User.findAll({ attributes: { exclude: ['password'] } });
         return result;
     } catch (error) {
-        return res.status(500).json({ message: 'ver arquivo userService' });
+        return error;
+    }
+};
+
+const findByPk = async (id) => {
+    try {
+        const result = await User.findByPk(id, { attributes: { exclude: ['password'] } });
+        return result;
+    } catch (error) {
+        return error;
     }
 };
     
 module.exports = {
-    create, findAll,
+    create, findAll, findByPk,
 };

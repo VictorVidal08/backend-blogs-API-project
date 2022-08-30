@@ -12,4 +12,6 @@ userRouter.post('/', userValidation, userController.create);
 
 userRouter.get('/', validToken, userController.findAll);
 
+userRouter.get('/:id', validToken, userController.findByPk);
+
 module.exports = userRouter;
