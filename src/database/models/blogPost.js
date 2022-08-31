@@ -6,6 +6,10 @@ const BlogPost = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     published: DataTypes.STRING,
     updated: DataTypes.STRING,
+  },
+  {
+    timestamps: false,
+    tableName: 'BlogPosts',
   });
   
   BlogPost.associate = (models) => {
